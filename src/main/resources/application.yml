@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: clean-arch-demo
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: username
+    password: password
+    url: jdbc:postgresql://localhost:8001/db_clean_arch_demo
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+    show-sql: true

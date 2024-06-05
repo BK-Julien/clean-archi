@@ -1,0 +1,26 @@
+services:
+  postgres_db_clean_arch_demo:
+    #image: 'postgres:16-alpine'
+    #c'est la version 15 de postgres actuelle compatible avec flyway
+    image: 'postgres:15.6-alpine'
+    container_name: 'postgres_db_clean_arch_demo'
+    environment:
+      - 'POSTGRES_DB=db_clean_arch_demo'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=username'
+      - 'PGDATA=/data_clean_arch_demo/postgres'
+    ports:
+      - '8001:5432'
+    restart: 'unless-stopped'
+    networks:
+      - 'network_postgres_clean_arch_demo'
+    volumes:
+      - 'data_postgres_clean_arch_demo:/data_clean_arch_demo/postgres'
+
+
+volumes:
+  data_postgres_clean_arch_demo:
+
+networks:
+  network_postgres_clean_arch_demo:
+    driver: 'bridge'
