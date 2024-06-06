@@ -1,7 +1,7 @@
 package dev.bkjulien.clean_arch_demo.core.application.usecases;
 
 import dev.bkjulien.clean_arch_demo.core.application.gateways.UserGateway;
-import dev.bkjulien.clean_arch_demo.core.domain.entity.User;
+import dev.bkjulien.clean_arch_demo.core.domain.entity.Utilisateur;
 
 public class CreateUserInteractor {
     private final UserGateway userGateway;
@@ -10,7 +10,7 @@ public class CreateUserInteractor {
         this.userGateway = userGateway;
     }
 
-    public User createUser(User user){
-        return userGateway.createUser(user);
+    public Utilisateur createUser(Utilisateur utilisateur){
+        return userGateway.createUser(utilisateur);
     }
 }

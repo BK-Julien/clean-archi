@@ -8,6 +8,7 @@ spring:
     url: jdbc:postgresql://localhost:8001/db_clean_arch_demo
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     open-in-view: true
     show-sql: true
+

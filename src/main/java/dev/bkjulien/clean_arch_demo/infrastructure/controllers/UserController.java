@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/api/v1/users")
 public class UserController {
-    private CreateUserInteractor createUserInteractor;
-    private UserDTOMapper userDTOMapper;
+    private final CreateUserInteractor createUserInteractor;
+    private final UserDTOMapper userDTOMapper;
 
-    public UserController(CreateUserInteractor createUserInteractor, UserDTOMapper userDTOMapper) {
+    public UserController(
+            CreateUserInteractor createUserInteractor,
+            UserDTOMapper userDTOMapper
+    ) {
         this.createUserInteractor = createUserInteractor;
         this.userDTOMapper = userDTOMapper;
     }

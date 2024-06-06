@@ -1,18 +1,18 @@
 package dev.bkjulien.clean_arch_demo.infrastructure.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
-@Table(name = "USER")
-public class UserEntity {
+@Table(name = "UTILISATEUR")
+@Entity
+public class UtilisateurEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
     private String password;
     private String email;
 
-    public UserEntity(String username, String password, String email) {
+    public UtilisateurEntity(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;

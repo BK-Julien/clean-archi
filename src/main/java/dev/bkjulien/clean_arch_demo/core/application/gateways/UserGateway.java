@@ -1,7 +1,7 @@
 package dev.bkjulien.clean_arch_demo.core.application.gateways;
 
-import dev.bkjulien.clean_arch_demo.core.domain.entity.User;
+import dev.bkjulien.clean_arch_demo.core.domain.entity.Utilisateur;
 
 public interface UserGateway {
-    User createUser(User user);
+    Utilisateur createUser(Utilisateur user);
 }

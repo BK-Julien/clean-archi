@@ -1,14 +1,14 @@
 package dev.bkjulien.clean_arch_demo.infrastructure.controllers;
 
-import dev.bkjulien.clean_arch_demo.core.domain.entity.User;
+import dev.bkjulien.clean_arch_demo.core.domain.entity.Utilisateur;
 
 public class UserDTOMapper {
-    public CreateUserResponse toResponse(User user){
+    public CreateUserResponse toResponse(Utilisateur user){
         return new CreateUserResponse(user.username(),user.email());
     }
 
-    public User toUser(CreateUserRequest request){
-        return new User(request.username(), request.password(), request.email());
+    public Utilisateur toUser(CreateUserRequest request){
+        return new Utilisateur(request.username(), request.password(), request.email());
     }
 
 }

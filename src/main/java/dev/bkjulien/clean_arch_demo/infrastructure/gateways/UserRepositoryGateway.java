@@ -1,7 +1,7 @@
 package dev.bkjulien.clean_arch_demo.infrastructure.gateways;
 
 import dev.bkjulien.clean_arch_demo.core.application.gateways.UserGateway;
-import dev.bkjulien.clean_arch_demo.core.domain.entity.User;
+import dev.bkjulien.clean_arch_demo.core.domain.entity.Utilisateur;
 import dev.bkjulien.clean_arch_demo.infrastructure.persistence.UserRepository;
 
 public class UserRepositoryGateway implements UserGateway {
@@ -14,7 +14,7 @@ public class UserRepositoryGateway implements UserGateway {
     }
 
     @Override
-    public User createUser(User userDomainObj) {
+    public Utilisateur createUser(Utilisateur userDomainObj) {
         var userEntity = userEntityMapper.toEntity(userDomainObj);
         var savedObj = userRepository.save(userEntity);
         return userEntityMapper.toDomainObj(savedObj);

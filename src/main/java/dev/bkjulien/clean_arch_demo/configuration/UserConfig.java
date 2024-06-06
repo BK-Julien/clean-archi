@@ -12,19 +12,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UserConfig {
     @Bean
-    public CreateUserInteractor createUseCase(UserGateway userGateway){
+    CreateUserInteractor createUseCase(UserGateway userGateway){
         return new CreateUserInteractor(userGateway);
     }
     @Bean
-    public UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper){
+    UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper){
         return new UserRepositoryGateway(userRepository, userEntityMapper);
     }
     @Bean
-    public UserEntityMapper userEntityMapper(){
+    UserEntityMapper userEntityMapper(){
         return new UserEntityMapper();
     }
     @Bean
-    public UserDTOMapper userDTOMapper(){
+    UserDTOMapper userDTOMapper(){
         return new UserDTOMapper();
     }
 }
